@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: rocketchat
+    name: rocketchat
+  name: rocketchat
+  namespace: rocketchat
+spec:
+  rules:
+  - host: ae97679655f1c4c11abff6d31c37a3a8-4d62cc681b1b0b5a.elb.ca-central-1.amazonaws.com
+    http:
+      paths:
+      - backend:
+          serviceName: rocketchat-server-service
+          servicePort: 80
+        path: /rocketchat
